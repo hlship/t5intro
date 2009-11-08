@@ -1,0 +1,37 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.connection.driver_class">
+      com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">
+      jdbc:mysql://localhost:3306/t5intro</property>
+    <property name="hibernate.dialect">
+      org.hibernate.dialect.MySQLDialect</property>
+
+    <property name="connection.provider_class">
+      org.hibernate.connection.C3P0ConnectionProvider</property>
+
+    <property name="hibernate.c3p0.acquire_increment">3</property>
+    <property name="hibernate.c3p0.idle_test_period">300</property>
+    <property name="hibernate.c3p0.timeout">1200</property>
+    <property name="hibernate.c3p0.max_size">15</property>
+    <property name="hibernate.c3p0.min_size">3</property>
+    <property name="hibernate.c3p0.max_statements">50</property>
+    <property name="hibernate.connection.username">t5</property>
+    <property name="hibernate.connection.password">secret</property>
+    <property name="hbm2ddl.auto">update</property>
+
+    <!--  
+    
+    create database t5intro;
+    
+    grant all on t5intro.* to 't5'@'localhost' identified by 'secret';
+    
+     -->
+
+    <property name="hibernate.generate_statistics">true</property>
+
+  </session-factory>
+</hibernate-configuration>
