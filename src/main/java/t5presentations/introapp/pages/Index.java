@@ -3,6 +3,7 @@ package t5presentations.introapp.pages;
 import org.apache.tapestry5.PersistenceConstants;
 import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
+import org.apache.tapestry5.hibernate.annotations.CommitAfter;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.hibernate.Session;
 
@@ -15,18 +16,19 @@ public class Index
 {
   @Property
   private BoardGame game;
-  
+
   @Property
   @Persist(PersistenceConstants.FLASH)
   private String message;
-  
+
   @Inject
   private Session session;
-  
+
+  @CommitAfter
   void onSuccess()
   {
     session.save(game);
-    
+
     message = "Added board game: " + game.getTitle();
   }
 }

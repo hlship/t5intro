@@ -2,8 +2,9 @@
   xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
   <!-- Most of the page content, including <head>, <body>, etc. tags, comes from Layout.tml -->
 
+
   <strong>${message}</strong>
 
-  <t:beaneditform submitlabel="Create Board Game" object="game" />
+  <t:beaneditform object="game" />
 
 </html>
