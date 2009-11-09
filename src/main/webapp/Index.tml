@@ -1,10 +1,8 @@
-<html t:type="layout" title="Create new board game" t:sidebarTitle="Current Time"
-  xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
-  <!-- Most of the page content, including <head>, <body>, etc. tags, comes from Layout.tml -->
-
+<html t:type="layout" title="message:page-title" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+  xmlns:p="tapestry:parameter">
 
   <strong>${message}</strong>
 
-  <t:beaneditform object="game" />
+  <t:beaneditform submitlabel="message:add-game" object="game" />
 
 </html>

@@ -4,6 +4,7 @@ import org.apache.tapestry5.PersistenceConstants;
 import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.hibernate.annotations.CommitAfter;
+import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.hibernate.Session;
 
@@ -24,11 +25,14 @@ public class Index
   @Inject
   private Session session;
 
+  @Inject
+  private Messages messages;
+
   @CommitAfter
   void onSuccess()
   {
     session.save(game);
 
-    message = "Added board game: " + game.getTitle();
+    message = messages.format("added-game", game.getTitle());
   }
 }
