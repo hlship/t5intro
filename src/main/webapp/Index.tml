@@ -1,21 +1,9 @@
-<html t:type="layout" title="introapp Index"
-      t:sidebarTitle="Current Time"
-      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
-      xmlns:p="tapestry:parameter">
-        <!-- Most of the page content, including <head>, <body>, etc. tags, comes from Layout.tml -->
+<html t:type="layout" title="Create new board game" t:sidebarTitle="Current Time"
+  xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+  <!-- Most of the page content, including <head>, <body>, etc. tags, comes from Layout.tml -->
 
-    <p>${message:greeting}</p>
+  <strong>${message}</strong>
 
-        <p>
-            Just to prove this is live:
-        </p>
-
-        <p>The current time is:
-        <strong> ${currentTime} </strong>.</p>
-
-
-        <p>
-            [<t:pagelink page="Index">refresh</t:pagelink>]
-        </p>
+  <t:beaneditform submitlabel="Create Board Game" object="game" />
 
 </html>
