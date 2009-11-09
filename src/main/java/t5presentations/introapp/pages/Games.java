@@ -26,7 +26,7 @@ public class Games
     return session.createCriteria(BoardGame.class).list();
   }
 
-  public Object onActionFromSelectGame(BoardGame game)
+  Object onActionFromSelectGame(BoardGame game)
   {
     selectedGame = game;
 

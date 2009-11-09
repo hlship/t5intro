@@ -4,19 +4,23 @@
   <div class="left-column">
     <t:grid source="games" include="title,creator" row="game">
       <p:titleCell>
-        <t:actionlink t:id="selectGame" context="game" zone="gameDetail">${game.title}
-        </t:actionlink>
+        <t:actionLink t:id="selectGame" context="game" zone="gameDetail">
+          ${game.title}
+        </t:actionLink>
       </p:titleCell>
     </t:grid>
   </div>
-  <t:zone id="gameDetail" t:id="gameDetail" class="right-column">
-    <t:if test="selectedGame" xml:space="preserve">
+
+  <div class="right-column">
+    <t:zone id="gameDetail" t:id="gameDetail">
+      <t:if test="selectedGame">
         <strong>${selectedGame.title}</strong>
         by
-        <strong>${selectedGame.creator}</strong>,
+        <strong>${selectedGame.creator}</strong>
         <br />
         For ${selectedGame.minPlayers} - ${selectedGame.maxPlayers} players.
       </t:if>
-  </t:zone>
+    </t:zone>
+  </div>
 
 </html>
