@@ -33,6 +33,6 @@ public class Index
   {
     session.save(game);
 
-    message = messages.format("added-game", game.getTitle());
+    message = messages.format("game-added", game.getTitle());
   }
 }

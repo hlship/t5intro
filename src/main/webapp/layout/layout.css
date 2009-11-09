@@ -379,3 +379,12 @@ a:hover {
     float: left;
     margin-left: 10px;
 }
+DIV.left-column {
+ width: 290px;
+ float: left;
+}
+
+DIV.right-column {
+ float: left;
+ margin-left: 20px;
+}
