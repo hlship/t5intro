@@ -1,35 +1,32 @@
 package t5presentations.introapp.pages;
 
-import java.util.List;
-
 import org.apache.tapestry5.annotations.InjectComponent;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.corelib.components.Zone;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.hibernate.Session;
-
 import t5presentations.introapp.entities.BoardGame;
 
-public class Games
-{
-  @Inject
-  private Session session;
+import java.util.List;
 
-  @Property
-  private BoardGame game, selectedGame;
+public class Games {
+    @Inject
+    private Session session;
 
-  @InjectComponent
-  private Zone gameDetail;
+    @Property
+    private BoardGame game, selectedGame;
 
-  public List getGames()
-  {
-    return session.createCriteria(BoardGame.class).list();
-  }
+    @InjectComponent
+    private Zone gameDetail;
 
-  Object onActionFromSelectGame(BoardGame game)
-  {
-    selectedGame = game;
+    @SuppressWarnings("rawtypes")
+    public List getGames() {
+        return session.createCriteria(BoardGame.class).list();
+    }
 
-    return gameDetail.getBody();
-  }
+    Object onActionFromSelectGame(BoardGame game) {
+        selectedGame = game;
+
+        return gameDetail.getBody();
+    }
 }
