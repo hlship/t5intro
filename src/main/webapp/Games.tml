@@ -1,26 +1,32 @@
 <html t:type="layout" title="Game List" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
-  xmlns:p="tapestry:parameter">
+      xmlns:p="tapestry:parameter">
 
-  <div class="left-column">
+<div class="left-column">
     <t:grid source="games" include="title,creator" row="game">
-      <p:titleCell>
-        <t:actionLink t:id="selectGame" context="game" zone="gameDetail">
-          ${game.title}
-        </t:actionLink>
-      </p:titleCell>
-    </t:grid>
-  </div>
+        <p:titleCell>
+            <t:actionlink t:id="selectGame" zone="gameDetail" context="game">
+                ${game.title}</t:actionlink>
+        </p:titleCell>
 
-  <div class="right-column">
+    </t:grid>
+
+</div>
+
+<div class="right-column">
     <t:zone id="gameDetail" t:id="gameDetail">
-      <t:if test="selectedGame">
-        <strong>${selectedGame.title}</strong>
-        by
-        <strong>${selectedGame.creator}</strong>
-        <br />
-        For ${selectedGame.minPlayers} - ${selectedGame.maxPlayers} players.
-      </t:if>
+
     </t:zone>
-  </div>
+</div>
+
+
+<t:block id="gameDetailContent">
+<strong>${game.title}</strong>
+    by
+    <strong>${game.creator}</strong>
+    <br/>
+    For ${game.minPlayers} - ${game.maxPlayers} players.
+
+</t:block>
+
 
 </html>

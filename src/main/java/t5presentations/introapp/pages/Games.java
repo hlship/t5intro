@@ -1,8 +1,7 @@
 package t5presentations.introapp.pages;
 
-import org.apache.tapestry5.annotations.InjectComponent;
+import org.apache.tapestry5.Block;
 import org.apache.tapestry5.annotations.Property;
-import org.apache.tapestry5.corelib.components.Zone;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.hibernate.Session;
 import t5presentations.introapp.entities.BoardGame;
@@ -14,19 +13,20 @@ public class Games {
     private Session session;
 
     @Property
-    private BoardGame game, selectedGame;
+    private BoardGame game;
 
-    @InjectComponent
-    private Zone gameDetail;
 
-    @SuppressWarnings("rawtypes")
+    @Inject
+    private Block gameDetailContent;
+
     public List getGames() {
         return session.createCriteria(BoardGame.class).list();
     }
 
-    Object onActionFromSelectGame(BoardGame game) {
-        selectedGame = game;
+    Object onActionFromSelectGame(BoardGame selectedGame) {
+        game = selectedGame;
 
-        return gameDetail.getBody();
+        return gameDetailContent;
     }
+
 }
