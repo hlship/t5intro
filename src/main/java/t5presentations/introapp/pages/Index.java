@@ -16,16 +16,17 @@ public class Index {
     private BoardGame game;
 
     @Inject
-    private AlertManager alertManager;
+    private Session session;
 
     @Inject
-    private Session session;
+    private AlertManager alertManager;
 
     @Inject
     private Messages messages;
 
     @CommitAfter
     void onSuccess() {
+
         session.save(game);
 
         alertManager.info(messages.format("game-added", game.getTitle()));
