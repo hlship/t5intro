@@ -32,6 +32,7 @@
     <div id="page">
       <!-- start sidebar -->
       <div id="sidebar">
+        <t:alerts/>
         <ul>
           <li id="search" style="background: none;">
           </li>

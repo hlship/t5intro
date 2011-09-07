@@ -1,8 +1,6 @@
 <html t:type="layout" title="message:page-title" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
   xmlns:p="tapestry:parameter">
 
-  <strong>${message}</strong>
-
   <t:beaneditform submitlabel="message:add-game" object="game" />
 
 </html>

@@ -10,6 +10,10 @@ targetCompatibility = '1.5'
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 
+versions = [
+        tapestry : "5.3-beta-4"
+]
+
 repositories {
     mavenCentral()
            
@@ -21,15 +25,18 @@ repositories {
 
     // For tapx
     mavenRepo urls: "http://howardlewisship.com/snapshot-repository/"    
+
+    // For preview releases of Tapestry 5.3
+    mavenRepo urls: "https://repository.apache.org/content/groups/staging"
 }
 
 
 dependencies {
-  compile "org.apache.tapestry:tapestry-hibernate:5.2.6"
+  compile "org.apache.tapestry:tapestry-hibernate:${versions.tapestry}"
   compile "mysql:mysql-connector-java:5.1.5"
-  compile "com.howardlewisship:tapx-datefield:1.1-SNAPSHOT"
+  compile "com.howardlewisship:tapx-datefield:1.2-SNAPSHOT"
 }
 
 dependencies {
-  testCompile "org.apache.tapestry:tapestry-test:5.2.5"
+  testCompile "org.apache.tapestry:tapestry-test:${versions.tapestry}"
 }

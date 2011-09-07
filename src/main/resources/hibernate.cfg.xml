@@ -10,15 +10,6 @@
     <property name="hibernate.dialect">
       org.hibernate.dialect.MySQLDialect</property>
 
-    <property name="connection.provider_class">
-      org.hibernate.connection.C3P0ConnectionProvider</property>
-
-    <property name="hibernate.c3p0.acquire_increment">3</property>
-    <property name="hibernate.c3p0.idle_test_period">300</property>
-    <property name="hibernate.c3p0.timeout">1200</property>
-    <property name="hibernate.c3p0.max_size">15</property>
-    <property name="hibernate.c3p0.min_size">3</property>
-    <property name="hibernate.c3p0.max_statements">50</property>
     <property name="hibernate.connection.username">t5</property>
     <property name="hibernate.connection.password">secret</property>
     <property name="hbm2ddl.auto">update</property>
